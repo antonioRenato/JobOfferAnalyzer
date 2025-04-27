@@ -14,7 +14,6 @@
     <Folder Include="DTOs\" />
     <Folder Include="Features\" />
     <Folder Include="UseCases\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>
