@@ -14,7 +14,6 @@ namespace JobOfferAnalyzer.Application.Services
         private const decimal THIRD_BRACKET_DEDUCTION = 662.69m;
         private const decimal FOURTH_BRACKET_DEDUCTION = 896.00m;
 
-
         public decimal ComputeBaseIr(decimal salary, decimal baseInss)
         {
             return salary - baseInss;
