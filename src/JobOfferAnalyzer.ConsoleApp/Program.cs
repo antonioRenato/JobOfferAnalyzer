@@ -2,6 +2,7 @@
 using JobOfferAnalyzer.ConsoleApp.IoC;
 using Microsoft.Extensions.DependencyInjection;
 using JobOfferAnalyzer.Domain.Enums;
+using JobOfferAnalyzer.Domain.Entities;
 
 public class Program
 {
@@ -12,9 +13,16 @@ public class Program
 
         var provider = services.BuildServiceProvider();
 
+        // Criação manual do input
+        var input = new SalaryCalculationInput
+        {
+            GrossSalary = 8000m,
+            ContractType = ContractType.PJ
+        };
+
         var salaryUseCase = provider.GetRequiredService<ICalculateSalaryUseCase>();
 
-        var result = salaryUseCase.Execute(6000, ContractType.CLT);
+        var result = salaryUseCase.Execute(input);
         Console.WriteLine($"Salário líquido: {result.NetSalary:C}");
     }
 }

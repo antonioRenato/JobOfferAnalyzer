@@ -1,10 +1,12 @@
-﻿using JobOfferAnalyzer.Application.Factory;
+﻿using FluentValidation;
+using JobOfferAnalyzer.Application.Factory;
 using JobOfferAnalyzer.Application.Interface;
 using JobOfferAnalyzer.Application.Interface.Factory;
 using JobOfferAnalyzer.Application.Interface.Strategy;
 using JobOfferAnalyzer.Application.Interface.UseCase;
 using JobOfferAnalyzer.Application.Services;
 using JobOfferAnalyzer.Application.UseCases;
+using JobOfferAnalyzer.Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace JobOfferAnalyzer.ConsoleApp.IoC
@@ -27,6 +29,7 @@ namespace JobOfferAnalyzer.ConsoleApp.IoC
 
             // UseCases
             services.AddScoped<ICalculateSalaryUseCase, CalculateSalaryUseCase>();
+            services.AddScoped<IValidator<SalaryCalculationInput>, SalaryCalculationInputValidator>();
 
             return services;
         }
