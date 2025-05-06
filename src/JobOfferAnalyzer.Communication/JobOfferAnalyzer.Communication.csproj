@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="11.11.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\JobOfferAnalyzer.Communication\JobOfferAnalyzer.Communication.csproj" />
     <ProjectReference Include="..\JobOfferAnalyzer.Domain\JobOfferAnalyzer.Domain.csproj" />
   </ItemGroup>
 

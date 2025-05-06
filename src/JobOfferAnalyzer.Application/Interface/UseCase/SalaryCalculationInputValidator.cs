@@ -1,9 +1,10 @@
 ﻿using FluentValidation;
+using JobOfferAnalyzer.Communication.Request;
 using JobOfferAnalyzer.Domain.Entities;
 
 namespace JobOfferAnalyzer.Application.Interface.UseCase
 {
-    public class SalaryCalculationInputValidator : AbstractValidator<SalaryCalculationInput> 
+    public class SalaryCalculationInputValidator : AbstractValidator<SalaryCalculationRequest> 
     {
         public SalaryCalculationInputValidator()
         {

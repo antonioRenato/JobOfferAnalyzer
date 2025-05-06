@@ -1,10 +1,10 @@
-﻿using JobOfferAnalyzer.Domain.Entities;
-using JobOfferAnalyzer.Domain.Enums;
+﻿using JobOfferAnalyzer.Communication.Request;
+using JobOfferAnalyzer.Domain.Entities;
 
 namespace JobOfferAnalyzer.Application.Interface.UseCase
 {
     public interface ICalculateSalaryUseCase
     {
-        SalaryDeductionResult Execute(SalaryCalculationInput input);
+        SalaryDeductionResult Execute(SalaryCalculationRequest input);
     }
 }

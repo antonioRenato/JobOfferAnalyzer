@@ -1,24 +1,25 @@
 ﻿using FluentValidation;
 using JobOfferAnalyzer.Application.Interface.Factory;
 using JobOfferAnalyzer.Application.Interface.UseCase;
+using JobOfferAnalyzer.Communication.Request;
+using JobOfferAnalyzer.Communication.Response;
 using JobOfferAnalyzer.Domain.Entities;
-using JobOfferAnalyzer.Domain.Enums;
 
 namespace JobOfferAnalyzer.Application.UseCases
 {
     public class CalculateSalaryUseCase : ICalculateSalaryUseCase
     {
         private readonly ISalaryStrategyFactory _strategyFactory;
-        private readonly IValidator<SalaryCalculationInput> _validator;
+        private readonly IValidator<SalaryCalculationRequest> _validator;
 
         public CalculateSalaryUseCase(ISalaryStrategyFactory strategyFactory,
-                                      IValidator<SalaryCalculationInput> validator)
+                                      IValidator<SalaryCalculationRequest> validator)
         {
             _strategyFactory = strategyFactory;
             _validator = validator;
         }
 
-        public SalaryDeductionResult Execute(SalaryCalculationInput input)
+        public SalaryDeductionResult Execute(SalaryCalculationRequest input)
         {
             var result = _validator.Validate(input);
 

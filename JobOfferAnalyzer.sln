@@ -7,13 +7,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E9952DD7-066
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{215874D0-FCC8-42D9-AFEF-2D2B3EF11A64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobOfferAnalyzer.Domain", "src\JobOfferAnalyzer.Domain\JobOfferAnalyzer.Domain.csproj", "{28E22A29-5B15-4AC9-BEF2-659B39980523}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobOfferAnalyzer.Domain", "src\JobOfferAnalyzer.Domain\JobOfferAnalyzer.Domain.csproj", "{28E22A29-5B15-4AC9-BEF2-659B39980523}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobOfferAnalyzer.ConsoleApp", "src\JobOfferAnalyzer.ConsoleApp\JobOfferAnalyzer.ConsoleApp.csproj", "{18FB6AC5-88EF-45C2-A775-10C83AAEDF2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobOfferAnalyzer.ConsoleApp", "src\JobOfferAnalyzer.ConsoleApp\JobOfferAnalyzer.ConsoleApp.csproj", "{18FB6AC5-88EF-45C2-A775-10C83AAEDF2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobOfferAnalyzer.Infra", "src\JobOfferAnalyzer.Infra\JobOfferAnalyzer.Infra.csproj", "{209398CA-5449-40C6-9904-586E8BF97457}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobOfferAnalyzer.Infra", "src\JobOfferAnalyzer.Infra\JobOfferAnalyzer.Infra.csproj", "{209398CA-5449-40C6-9904-586E8BF97457}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobOfferAnalyzer.Application", "src\JobOfferAnalyzer.Application\JobOfferAnalyzer.Application.csproj", "{D68A524E-2B63-426A-8829-E6279DB58992}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobOfferAnalyzer.Application", "src\JobOfferAnalyzer.Application\JobOfferAnalyzer.Application.csproj", "{D68A524E-2B63-426A-8829-E6279DB58992}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobOfferAnalyzer.Communication", "src\JobOfferAnalyzer.Communication\JobOfferAnalyzer.Communication.csproj", "{4B642BB5-5B56-4DA6-85C8-7870562213A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobOfferAnalyzer.API", "src\JobOfferAnalyzer.API\JobOfferAnalyzer.API.csproj", "{2BE0FF64-7007-44F1-9F70-26B912BD22FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +41,14 @@ Global
 		{D68A524E-2B63-426A-8829-E6279DB58992}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D68A524E-2B63-426A-8829-E6279DB58992}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D68A524E-2B63-426A-8829-E6279DB58992}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B642BB5-5B56-4DA6-85C8-7870562213A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B642BB5-5B56-4DA6-85C8-7870562213A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B642BB5-5B56-4DA6-85C8-7870562213A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B642BB5-5B56-4DA6-85C8-7870562213A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BE0FF64-7007-44F1-9F70-26B912BD22FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BE0FF64-7007-44F1-9F70-26B912BD22FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BE0FF64-7007-44F1-9F70-26B912BD22FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BE0FF64-7007-44F1-9F70-26B912BD22FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +58,8 @@ Global
 		{18FB6AC5-88EF-45C2-A775-10C83AAEDF2C} = {E9952DD7-0664-4CD6-9771-AD4DD133E877}
 		{209398CA-5449-40C6-9904-586E8BF97457} = {E9952DD7-0664-4CD6-9771-AD4DD133E877}
 		{D68A524E-2B63-426A-8829-E6279DB58992} = {E9952DD7-0664-4CD6-9771-AD4DD133E877}
+		{4B642BB5-5B56-4DA6-85C8-7870562213A8} = {E9952DD7-0664-4CD6-9771-AD4DD133E877}
+		{2BE0FF64-7007-44F1-9F70-26B912BD22FD} = {E9952DD7-0664-4CD6-9771-AD4DD133E877}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F05B316A-0839-419F-8E7A-F7907AE4CE2F}
