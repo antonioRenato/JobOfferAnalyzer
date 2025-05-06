@@ -2,7 +2,6 @@
 using JobOfferAnalyzer.Application.Interface.Factory;
 using JobOfferAnalyzer.Application.Interface.UseCase;
 using JobOfferAnalyzer.Communication.Request;
-using JobOfferAnalyzer.Communication.Response;
 using JobOfferAnalyzer.Domain.Entities;
 
 namespace JobOfferAnalyzer.Application.UseCases
@@ -19,7 +18,7 @@ namespace JobOfferAnalyzer.Application.UseCases
             _validator = validator;
         }
 
-        public SalaryDeductionResult Execute(SalaryCalculationRequest input)
+        public async Task<SalaryDeductionResult> Execute(SalaryCalculationRequest input)
         {
             var result = _validator.Validate(input);
 

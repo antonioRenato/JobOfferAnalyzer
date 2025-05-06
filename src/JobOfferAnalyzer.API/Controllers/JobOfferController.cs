@@ -1,5 +1,8 @@
-﻿using JobOfferAnalyzer.Communication.Request;
+﻿using JobOfferAnalyzer.Application.Interface.UseCase;
+using JobOfferAnalyzer.Communication.Request;
+using JobOfferAnalyzer.Communication.Response;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace JobOfferAnalyzer.API.Controllers
 {
@@ -7,10 +10,38 @@ namespace JobOfferAnalyzer.API.Controllers
     [ApiController]
     public class JobOfferController : ControllerBase
     {
-        [HttpPost]
-        public IActionResult Register([FromBody] SalaryCalculationRequest request)
+        private readonly ICalculateSalaryUseCase _useCase;
+        
+        public JobOfferController(ICalculateSalaryUseCase useCase)
         {
-            return Ok();
+            _useCase = useCase;
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<SalaryDeductionResponse>> Register([FromBody] SalaryCalculationRequest request)
+        {
+            try
+            {
+                var result = await _useCase.Execute(request);
+
+                var response = new SalaryDeductionResponse
+                {
+                    InssDeduction = result.InssDeduction,
+                    IrDeduction = result.IrDeduction,
+                    FgtsDeduction = result.FgtsDeduction,
+                    NetSalary = result.NetSalary
+                };
+
+                return Ok(response);
+            }
+            catch (ValidationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch
+            {
+                return StatusCode(500, "An unexpected error occurred.");
+            }
         }
     }
 }

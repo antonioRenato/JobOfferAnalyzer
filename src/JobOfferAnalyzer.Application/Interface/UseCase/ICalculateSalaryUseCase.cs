@@ -5,6 +5,6 @@ namespace JobOfferAnalyzer.Application.Interface.UseCase
 {
     public interface ICalculateSalaryUseCase
     {
-        SalaryDeductionResult Execute(SalaryCalculationRequest input);
+        Task<SalaryDeductionResult> Execute(SalaryCalculationRequest input);
     }
 }
