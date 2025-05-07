@@ -1,4 +1,5 @@
-﻿using JobOfferAnalyzer.Application.Interface.UseCase;
+﻿using JobOfferAnalyzer.Application.Interface.Mapper;
+using JobOfferAnalyzer.Application.Interface.UseCase;
 using JobOfferAnalyzer.Communication.Request;
 using JobOfferAnalyzer.Communication.Response;
 using Microsoft.AspNetCore.Mvc;
@@ -11,10 +12,12 @@ namespace JobOfferAnalyzer.API.Controllers
     public class JobOfferController : ControllerBase
     {
         private readonly ICalculateSalaryUseCase _useCase;
+        private readonly ISalaryResultMapper _mapper;
         
-        public JobOfferController(ICalculateSalaryUseCase useCase)
+        public JobOfferController(ICalculateSalaryUseCase useCase, ISalaryResultMapper mapper)
         {
             _useCase = useCase;
+            _mapper = mapper;
         }
 
         [HttpPost]
@@ -24,13 +27,7 @@ namespace JobOfferAnalyzer.API.Controllers
             {
                 var result = await _useCase.Execute(request);
 
-                var response = new SalaryDeductionResponse
-                {
-                    InssDeduction = result.InssDeduction,
-                    IrDeduction = result.IrDeduction,
-                    FgtsDeduction = result.FgtsDeduction,
-                    NetSalary = result.NetSalary
-                };
+                var response = _mapper.Map(result);
 
                 return Ok(response);
             }
