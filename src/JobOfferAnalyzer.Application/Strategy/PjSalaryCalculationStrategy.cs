@@ -1,6 +1,7 @@
-﻿using JobOfferAnalyzer.Domain.Entities;
+﻿using JobOfferAnalyzer.Application.Interface.Strategy;
+using JobOfferAnalyzer.Domain.Entities;
 
-namespace JobOfferAnalyzer.Application.Interface.Strategy
+namespace JobOfferAnalyzer.Application.Strategy
 {
     public class PjSalaryCalculationStrategy : ISalaryCalculationStrategy
     {        

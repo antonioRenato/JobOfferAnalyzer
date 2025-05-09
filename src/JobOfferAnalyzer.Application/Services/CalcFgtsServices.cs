@@ -6,7 +6,7 @@ namespace JobOfferAnalyzer.Application.Services
     {
         public decimal ComputeFgts(decimal salary)
         {
-            return salary * 1.08m;
+            return salary * 0.08m;
         }
     }
 }

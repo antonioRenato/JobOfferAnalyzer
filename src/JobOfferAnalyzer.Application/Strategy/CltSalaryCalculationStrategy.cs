@@ -1,6 +1,8 @@
-﻿using JobOfferAnalyzer.Domain.Entities;
+﻿using JobOfferAnalyzer.Application.Interface;
+using JobOfferAnalyzer.Application.Interface.Strategy;
+using JobOfferAnalyzer.Domain.Entities;
 
-namespace JobOfferAnalyzer.Application.Interface.Strategy
+namespace JobOfferAnalyzer.Application.Strategy
 {
     public class CltSalaryCalculationStrategy : ISalaryCalculationStrategy
     {
@@ -27,7 +29,7 @@ namespace JobOfferAnalyzer.Application.Interface.Strategy
             // FGTS Deduction
             var fgtsDeduction = _calcFgtsServices.ComputeFgts(grossSalary);
 
-            var netSalary = grossSalary - inssDeduction - irDeduction;
+            var netSalary = grossSalary - inssDeduction - irDeduction - fgtsDeduction;
 
             return new SalaryDeductionResult
             {

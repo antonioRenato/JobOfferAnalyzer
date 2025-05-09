@@ -1,5 +1,6 @@
 ﻿using JobOfferAnalyzer.Application.Interface.Factory;
 using JobOfferAnalyzer.Application.Interface.Strategy;
+using JobOfferAnalyzer.Application.Strategy;
 using JobOfferAnalyzer.Domain.Enums;
 
 namespace JobOfferAnalyzer.Application.Factory
