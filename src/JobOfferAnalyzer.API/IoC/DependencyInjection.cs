@@ -1,12 +1,12 @@
 ﻿using FluentValidation;
 using JobOfferAnalyzer.Application.Factory;
+using JobOfferAnalyzer.Application.Interface;
 using JobOfferAnalyzer.Application.Interface.Factory;
 using JobOfferAnalyzer.Application.Interface.Mapper;
-using JobOfferAnalyzer.Application.Interface.Strategy;
 using JobOfferAnalyzer.Application.Interface.UseCase;
-using JobOfferAnalyzer.Application.Interface;
 using JobOfferAnalyzer.Application.Mapper;
 using JobOfferAnalyzer.Application.Services;
+using JobOfferAnalyzer.Application.Strategy;
 using JobOfferAnalyzer.Application.UseCases;
 using JobOfferAnalyzer.Communication.Request;
 
